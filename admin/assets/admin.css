@@ -1,0 +1,171 @@
+/* ============================================================
+   Masa Geo-Pricing — Admin Styles (RTL)
+   ============================================================ */
+.masa-geo-wrap * { box-sizing: border-box; }
+
+.masa-geo-wrap {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    max-width: 1200px;
+}
+
+.masa-geo-title { font-size: 1.6rem; margin-bottom: 1.2rem; color: #1d2327; }
+
+/* Grid */
+.masa-geo-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Card */
+.masa-geo-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+
+.masa-geo-card--full { grid-column: 1 / -1; }
+
+.masa-geo-card h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: .7rem;
+}
+
+.masa-geo-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+
+.masa-geo-card-header h2 { margin-bottom: 0; border-bottom: none; padding-bottom: 0; }
+
+.masa-geo-form-table th { padding-right: 0; padding-left: 1.5rem; white-space: nowrap; }
+
+/* Notice */
+.masa-geo-notice {
+    padding: .8rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.masa-geo-notice--success { background: #d1fae5; border: 1px solid #6ee7b7; color: #065f46; }
+.masa-geo-notice--error   { background: #fee2e2; border: 1px solid #fca5a5; color: #991b1b; }
+
+/* Zone Row */
+.masa-zone-row {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    margin-bottom: .8rem;
+    overflow: hidden;
+    transition: box-shadow .2s;
+}
+
+.masa-zone-row:hover { box-shadow: 0 2px 10px rgba(0,0,0,.08); }
+
+.masa-zone-header {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    padding: .8rem 1rem;
+    background: #f8fafc;
+    cursor: pointer;
+}
+
+.masa-zone-drag { color: #9ca3af; cursor: grab; font-size: 1.1rem; }
+.masa-zone-label-display { flex: 1; font-size: .95rem; }
+.masa-zone-actions { display: flex; gap: .4rem; }
+
+.masa-zone-body {
+    padding: 1rem 1.2rem;
+    border-top: 1px solid #e5e7eb;
+    background: #fff;
+}
+
+.masa-zone-body .form-table th { padding-right: 0; padding-left: 1rem; width: 160px; }
+
+/* Badge */
+.masa-badge { font-size: .72rem; padding: .2rem .6rem; border-radius: 999px; font-weight: 600; }
+.masa-badge--fallback { background: #fef3c7; color: #92400e; }
+
+/* Footer */
+.masa-geo-zones-footer { margin-top: 1.2rem; text-align: left; direction: ltr; }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .masa-geo-grid { grid-template-columns: 1fr; }
+}
+
+/* ═══ Product Panel (تاب التسعير الجغرافي) — v3.5.0: اتنقلت من inline ═══ */
+#masa_geo_pricing_panel { direction: rtl; text-align: right; }
+#masa_geo_pricing_panel * { box-sizing: border-box; }
+.masa-product-panel-header { padding: 1rem 1.5rem .5rem; border-bottom: 1px solid #f0f0f0; margin-bottom: 1rem; }
+.masa-product-panel-header h3 { margin: 0 0 .4rem; font-size: 1rem; }
+.masa-zones-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; padding: 1rem 1.5rem; }
+.masa-zone-price-card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; background: #fafafa; min-width: 0; }
+.masa-zone-price-header { display: flex; align-items: center; gap: .5rem; margin-bottom: .5rem; flex-wrap: wrap; }
+.masa-zone-price-header strong { flex: 1; font-size: .95rem; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.masa-zone-currency-tag { background: #dbeafe; color: #1e40af; border-radius: 4px; padding: .1rem .5rem; font-size: .75rem; font-weight: 700; white-space: nowrap; }
+.masa-zone-price-meta { font-size: .78rem; color: #6b7280; margin-bottom: .8rem; display: flex; flex-direction: column; gap: .2rem; }
+.masa-zone-price-meta span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.masa-zone-price-input-wrap label { display: block !important; font-size: .8rem; font-weight: 600; margin-bottom: .3rem !important; }
+.masa-input-group { display: flex; align-items: stretch; border: 1px solid #d1d5db; border-radius: 6px; overflow: hidden; background: #fff; width: 100%; box-sizing: border-box; }
+.masa-input-group:focus-within { border-color: #2271b1; box-shadow: 0 0 0 2px rgba(34,113,177,.15); }
+.masa-input-prefix { padding: 0 .6rem; background: #f3f4f6; color: #6b7280; font-size: .82rem; font-weight: 600; border-inline-start: 1px solid #d1d5db; display: flex; align-items: center; flex-shrink: 0; white-space: nowrap; }
+.masa-zone-price-field { border: none !important; box-shadow: none !important; flex: 1 1 auto; min-width: 0 !important; width: 100% !important; padding: .4rem .6rem !important; font-size: .9rem !important; height: 34px; box-sizing: border-box !important; }
+.masa-badge { font-size: .7rem; padding: .15rem .5rem; border-radius: 999px; font-weight: 600; }
+.masa-badge--fallback { background: #fef3c7; color: #92400e; }
+
+/* ─── WooCommerce Admin CSS Isolation & Resets ─── */
+/* WooCommerce dynamically targets `.woocommerce_options_panel label`, inputs, and paragraphs.
+   We override their floats, margins, and widths to isolate our custom HTML views from breaking. */
+#masa_geo_pricing_panel label,
+.masa-variation-zone-stock label,
+.masa-variation-wrap label {
+    float: none !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: inline-block !important;
+}
+
+#masa_geo_pricing_panel input[type="checkbox"],
+.masa-variation-zone-stock input[type="checkbox"],
+.masa-variation-wrap input[type="checkbox"] {
+    float: none !important;
+    width: auto !important;
+    margin: 0 !important;
+    height: auto !important;
+    display: inline-block !important;
+}
+
+#masa_geo_pricing_panel p,
+.masa-variation-zone-stock p,
+.masa-variation-wrap p {
+    float: none !important;
+    width: auto !important;
+    margin: 0 0 1em !important;
+    padding: 0 !important;
+}
+
+/* Clear WooCommerce floats and ensure custom wrappers wrap cleanly */
+.masa-product-panel-header {
+    clear: both !important;
+    float: none !important;
+}
+
+/* Enforce column width in the WordPress / WooCommerce products table */
+.wp-list-table .column-masa_geo_visibility {
+    width: 140px !important;
+    min-width: 140px !important;
+    white-space: normal !important;
+    text-align: right !important;
+}

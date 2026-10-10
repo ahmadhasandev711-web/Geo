@@ -1,0 +1,3 @@
+# Masa Geo-Pricing Translation File
+# Text Domain: masa-geo-pricing
+# This file is ready for translation using Poedit or Loco Translate plugin.

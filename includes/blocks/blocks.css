@@ -1,0 +1,201 @@
+/**
+ * Masa Geo Pricing — Blocks Styles
+ * مصمّم ليرث ألوان وخطوط الثيم الحالي تلقائياً
+ * بنستخدم CSS variables مع fallbacks محايدة
+ */
+
+/* ── الشبكة ── */
+.masa-geo-grid {
+	display: grid;
+	gap: var(--wp--style--block-gap, 1.5rem);
+	margin: 1rem 0;
+}
+.masa-geo-grid--cols-1 { grid-template-columns: 1fr; }
+.masa-geo-grid--cols-2 { grid-template-columns: repeat(2, 1fr); }
+.masa-geo-grid--cols-3 { grid-template-columns: repeat(3, 1fr); }
+.masa-geo-grid--cols-4 { grid-template-columns: repeat(4, 1fr); }
+.masa-geo-grid--cols-5 { grid-template-columns: repeat(5, 1fr); }
+.masa-geo-grid--cols-6 { grid-template-columns: repeat(6, 1fr); }
+
+@media (max-width: 980px) {
+	.masa-geo-grid--cols-4,
+	.masa-geo-grid--cols-5,
+	.masa-geo-grid--cols-6 { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 680px) {
+	.masa-geo-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 1rem; }
+}
+@media (max-width: 420px) {
+	.masa-geo-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ── الكارت ── */
+.masa-geo-card {
+	display: flex;
+	flex-direction: column;
+	background: var(--wp--preset--color--background, #fff);
+	border: 1px solid rgba(0, 0, 0, 0.08);
+	border-radius: var(--wp--custom--radius, 10px);
+	overflow: hidden;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	position: relative;
+}
+.masa-geo-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.masa-geo-card__media {
+	position: relative;
+	overflow: hidden;
+	aspect-ratio: 1 / 1;
+	background: rgba(0, 0, 0, 0.03);
+}
+.masa-geo-card__media img,
+.masa-geo-card__img-link img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.4s ease;
+}
+.masa-geo-card:hover .masa-geo-card__media img {
+	transform: scale(1.05);
+}
+.masa-geo-card__img-link {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.masa-geo-card__body {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	padding: 1rem;
+	flex: 1;
+}
+
+.masa-geo-card__title {
+	margin: 0;
+	font-size: 1rem;
+	line-height: 1.4;
+	font-weight: 600;
+}
+.masa-geo-card__title a {
+	color: inherit;
+	text-decoration: none;
+}
+.masa-geo-card__title a:hover {
+	opacity: 0.75;
+}
+
+.masa-geo-card__rating {
+	font-size: 0.85rem;
+}
+
+.masa-geo-card__excerpt {
+	font-size: 0.88rem;
+	opacity: 0.8;
+	line-height: 1.6;
+}
+
+.masa-geo-card__price {
+	font-size: 1.1rem;
+	font-weight: 700;
+	margin-top: auto;
+}
+.masa-geo-card__price del {
+	opacity: 0.5;
+	font-weight: 400;
+	font-size: 0.9em;
+	margin-inline-end: 6px;
+}
+.masa-geo-card__price ins {
+	text-decoration: none;
+}
+
+.masa-geo-card__cart {
+	margin-top: 0.5rem;
+}
+.masa-geo-btn {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+/* ── الشارات ── */
+.masa-geo-badge {
+	position: absolute;
+	top: 10px;
+	inset-inline-start: 10px;
+	z-index: 2;
+	font-size: 0.72rem;
+	font-weight: 700;
+	padding: 0.25rem 0.6rem;
+	border-radius: 999px;
+	color: #fff;
+}
+.masa-geo-badge--sale { background: #e0245e; }
+.masa-geo-badge--oos  { background: #6b7280; }
+
+/* ── منتج واحد ── */
+.masa-geo-single--horizontal .masa-geo-card--detailed {
+	flex-direction: row;
+	align-items: stretch;
+}
+.masa-geo-single--horizontal .masa-geo-card--detailed .masa-geo-card__media {
+	flex: 0 0 45%;
+	aspect-ratio: auto;
+}
+.masa-geo-single--horizontal .masa-geo-card--detailed .masa-geo-card__body {
+	justify-content: center;
+	padding: 1.5rem;
+}
+.masa-geo-card--detailed .masa-geo-card__title {
+	font-size: 1.4rem;
+}
+.masa-geo-card--detailed .masa-geo-card__price {
+	font-size: 1.35rem;
+}
+.masa-geo-card--detailed .masa-geo-card__cart {
+	max-width: 260px;
+}
+
+@media (max-width: 680px) {
+	.masa-geo-single--horizontal .masa-geo-card--detailed {
+		flex-direction: column;
+	}
+	.masa-geo-single--horizontal .masa-geo-card--detailed .masa-geo-card__media {
+		flex: auto;
+		aspect-ratio: 1 / 1;
+	}
+}
+
+/* ── عنوان القسم ── */
+.masa-geo-section-heading {
+	margin: 0 0 1rem;
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+/* ── شارة المنطقة ── */
+.masa-geo-zone-note {
+	margin-top: 1rem;
+	font-size: 0.85rem;
+	opacity: 0.7;
+	text-align: center;
+}
+
+/* ── رسالة فارغة ── */
+.masa-geo-empty {
+	padding: 2rem;
+	text-align: center;
+	border: 1px dashed rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+	opacity: 0.6;
+}
+
+/* ── RTL ── */
+.rtl .masa-geo-card__price del { margin-inline-end: 6px; }
